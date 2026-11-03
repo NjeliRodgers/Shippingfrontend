@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Ocean Blue theme variable foundation matching footer (#005f9e / #00375b) */
+.theme-ocean {
+  --color-brand-ocean: #005f9e;
+  --color-brand-ocean-dark: #00375b;
+  --color-brand-ocean-card: #004d7c;
+  --color-brand-ocean-well: #00385c;
+  --color-brand-coral: #f05a36;
+}
+
+.theme-white {
+  --color-brand-ocean: #005f9e;
+  --color-brand-ocean-dark: #0f172a;
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 95, 158, 0.4);
+  border-radius: 4px;
+}
+.theme-ocean ::-webkit-scrollbar-thumb {
+  background: rgba(0, 195, 247, 0.3);
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid #0e7490;
+    outline-offset: 3px;
+  }
+
+  button, a, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
